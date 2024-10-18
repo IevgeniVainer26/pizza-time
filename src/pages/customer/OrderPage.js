@@ -60,22 +60,23 @@ function OrderPage() {
 
   const handleFinishOrder = (orderIndex) => {
     const order = orders[orderIndex];
-
+  
     // Move the order to the manager's list
     const managerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
     managerOrders.push(order);
     localStorage.setItem('managerOrders', JSON.stringify(managerOrders));
-
+  
     // Remove the finished order from the list and update localStorage
     const updatedOrders = orders.filter((_, index) => index !== orderIndex);
     setOrders(updatedOrders);
     localStorage.setItem('orders', JSON.stringify(updatedOrders)); // Update localStorage
-
+  
     // Clear the customer name and unlock the input field after finishing the order
     setCustomerName(''); // Clear customer name after the order is finished
     setIsNameLocked(false); // Unlock the input
     console.log('Input unlocked:', false); // Log after unlocking
   };
+  
 
   return (
     <div>

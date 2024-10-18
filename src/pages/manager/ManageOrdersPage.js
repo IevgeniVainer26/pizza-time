@@ -1,13 +1,33 @@
+// src/pages/manager/ManageOrdersPage.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ManageOrdersPage() {
   const [managerOrders, setManagerOrders] = useState([]);
+  const navigate = useNavigate();
 
   // Load manager orders from localStorage when the component mounts
   useEffect(() => {
-    const storedManagerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
-    setManagerOrders(storedManagerOrders);
+    const loadManagerOrders = () => {
+      const storedManagerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
+      setManagerOrders(storedManagerOrders);
+    };
+
+    // Load orders initially
+    loadManagerOrders();
+
+    // Set up an event listener for storage events
+    window.addEventListener('storage', loadManagerOrders);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('storage', loadManagerOrders);
+    };
   }, []);
+
+  const handleViewOrder = (index) => {
+    navigate(`/order-view/${index}`); // Navigate to OrderViewPage with order index
+  };
 
   return (
     <div>
@@ -19,13 +39,7 @@ function ManageOrdersPage() {
           {managerOrders.map((order, index) => (
             <li key={index}>
               <strong>Order for {order.customerName}</strong>
-              <ul>
-                {order.pizzas.map((pizza, pizzaIndex) => (
-                  <li key={pizzaIndex}>
-                    <span>{pizza.size} pizza with {pizza.toppings.join(', ') || 'no toppings'}</span>
-                  </li>
-                ))}
-              </ul>
+              <button onClick={() => handleViewOrder(index)}>View</button>
             </li>
           ))}
         </ul>
