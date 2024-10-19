@@ -100,12 +100,7 @@ function OrderPage() {
         <button onClick={handleAddOrder}>Add New Order</button>
       </div>
       <OrderList orders={orders} onEditOrder={handleEditOrder} onFinishOrder={handleFinishOrder} />
-      <div>
-        <h4>Debugging Info</h4>
-        <p>Current Customer Name: {customerName}</p>
-        <p>Is Name Locked: {isNameLocked ? 'Yes' : 'No'}</p>
-        <p>Current Orders in State: {JSON.stringify(orders, null, 2)}</p>
-      </div>
+      {/* Debugging Info section removed */}
     </div>
   );
 }
