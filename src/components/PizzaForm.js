@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const PizzaForm = ({ onSave, initialPizza }) => {
+const PizzaForm = ({ onSave, initialPizza, onBack }) => { // Added onBack prop
   const [size, setSize] = useState(initialPizza?.size || 'Medium');
   const [toppings, setToppings] = useState(initialPizza?.toppings || []);
-  const navigate = useNavigate();
-
 
   useEffect(() => {
     if (initialPizza) {
@@ -63,7 +60,7 @@ const PizzaForm = ({ onSave, initialPizza }) => {
         {/* Add more toppings as needed */}
       </div>
       <button onClick={handleSave}>Save Pizza</button>
-      <button onClick={() => navigate('/')} style={{ marginLeft: '10px' }}>Back</button> {/* Back button */}
+      <button onClick={onBack} style={{ marginLeft: '10px' }}>Back</button> {/* Use onBack prop for back navigation */}
     </div>
   );
 };
