@@ -1,5 +1,6 @@
 import React from 'react';
-import OrderItem from './OrderItem'; // Assuming you are using the OrderItem component
+import OrderItem from '../OrderItem/OrderItem'; // Assuming you are using the OrderItem component
+import './OrderList.css';
 
 const OrderList = ({ orders, onEditOrder, onFinishOrder }) => {
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import './OrderItem.css';
 
 const OrderItem = ({ order, onEditOrder, onFinishOrder, orderIndex }) => {
   return (

@@ -1,0 +1,26 @@
+/* OrderItem.css */
+li {
+    list-style: none;
+    margin: 15px 0;
+    background-color: #fff4e1; /* Light cheese color */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  strong {
+    font-size: 1.2em;
+    color: #c34a26; /* Tomato red */
+  }
+  
+  button {
+    background-color: #28a745; /* Fresh basil green */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #218838; /* Darker basil green */
+  }
+  

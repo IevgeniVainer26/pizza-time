@@ -1,7 +1,8 @@
 // src/pages/customer/OrderPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import OrderList from '../../components/OrderList';
+import OrderList from '../../components/OrderList/OrderList';
+import './OrderPage.css';
 
 function OrderPage() {
   const [customerName, setCustomerName] = useState(''); // State for the customer name
@@ -79,30 +80,25 @@ function OrderPage() {
   
 
   return (
-    <div>
-      <h2>Customer Orders</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter Customer Name"
-          value={customerName} // Bind the input to customerName state
-          onChange={(e) => {
-            // Only allow changes if input is not locked
-            if (!isNameLocked) {
-              setCustomerName(e.target.value); // Update state on input change
-              console.log('Current customer name on change:', e.target.value); // Log on input change
-            } else {
-              console.log('Input is locked; cannot change customer name.'); // Log when trying to change locked input
-            }
-          }} 
-          readOnly={isNameLocked} // Make input read-only based on isNameLocked state
-        />
-        <button onClick={handleAddOrder}>Add New Order</button>
-      </div>
-      <OrderList orders={orders} onEditOrder={handleEditOrder} onFinishOrder={handleFinishOrder} />
-      {/* Debugging Info section removed */}
+    <div className="order-container">
+    <h2>Customer Orders</h2>
+    <div className="input-container"> {/* Wrapper for input and button */}
+      <input
+        type="text"
+        placeholder="Enter Customer Name"
+        value={customerName}
+        onChange={(e) => {
+          if (!isNameLocked) {
+            setCustomerName(e.target.value);
+          }
+        }} 
+        readOnly={isNameLocked}
+      />
+      <button onClick={handleAddOrder}>Add New Order</button>
     </div>
-  );
+    <OrderList orders={orders} onEditOrder={handleEditOrder} onFinishOrder={handleFinishOrder} />
+  </div>
+);
 }
 
 export default OrderPage;

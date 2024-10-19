@@ -1,6 +1,7 @@
 // src/pages/manager/ManageOrdersPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './ManageOrdersPage.css';
 
 function ManageOrdersPage() {
   const [managerOrders, setManagerOrders] = useState([]);

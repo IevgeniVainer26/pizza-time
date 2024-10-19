@@ -1,0 +1,17 @@
+/* PizzaEditPage.css */
+h2 {
+    text-align: center;
+  }
+  
+  button {
+    margin: 10px 0;
+    background-color: #e74c3c; /* Spicy red */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #c0392b; /* Darker spicy red */
+  }
+  

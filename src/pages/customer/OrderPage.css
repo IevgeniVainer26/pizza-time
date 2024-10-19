@@ -1,0 +1,38 @@
+.order-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items to the start (top) of the container */
+    height: 100vh; /* Full viewport height */
+    padding-top: 0px; /* Decrease padding at the top for higher positioning */
+  }
+  
+  .input-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the input and button horizontally */
+    align-items: center; /* Center items vertically within the container */
+    margin-bottom: 20px; /* Space below the input and button container */
+  }
+  
+  input {
+    width: 200px; /* Fixed width for the input */
+    padding: 10px; /* Padding inside the input */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #d1d1d1; /* Light border */
+    margin-right: 10px; /* Space between input and button */
+  }
+  
+  button {
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #ff6347; /* Tomato color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  button:hover {
+    background-color: #e55342; /* Darker tomato color on hover */
+  }
+  

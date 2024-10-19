@@ -1,6 +1,7 @@
 // src/pages/manager/OrderViewPage.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './OrderViewPage.css';
 
 function OrderViewPage() {
   const { id } = useParams(); // Get the order index from the URL parameters
