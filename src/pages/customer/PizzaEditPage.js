@@ -1,4 +1,3 @@
-// src/pages/customer/PizzaEditPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PizzaForm from '../../components/PizzaForm';
@@ -45,14 +44,7 @@ function PizzaEditPage() {
     <div>
       <h2>{pizzaIndex !== undefined ? `Edit Pizza for ${customerName}` : `Add Pizza for ${customerName}`}</h2>
       <PizzaForm onSave={handleAddOrUpdatePizza} initialPizza={pizzaIndex !== undefined ? existingPizzas[pizzaIndex] : null} />
-      <h3>Current Pizzas:</h3>
-      <ul>
-        {existingPizzas.map((pizza, index) => (
-          <li key={index}>
-            {pizza.size} pizza with {pizza.toppings.join(', ') || 'no toppings'}
-          </li>
-        ))}
-      </ul>
+      {/* Removed the current pizzas list */}
     </div>
   );
 }
