@@ -14,7 +14,7 @@ const OrderItem = ({ order, onEditOrder, onFinishOrder, orderIndex }) => {
                 {pizza.toppings.length > 0 ? (
                   <div>
                     <span>Toppings:</span>
-                    <ul style={{ listStyleType: 'none', padding: '0' }}> {/* Remove bullet points */}
+                    <ul style={{ listStyleType: 'none', padding: '0' }}>
                       {pizza.toppings.map((topping, toppingIndex) => (
                         <li key={toppingIndex} style={{ display: 'inline', marginRight: '10px' }}>
                           {topping}

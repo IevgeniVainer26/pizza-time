@@ -1,36 +1,30 @@
-/* PizzaForm.css */
-
-/* Container for the entire form */
 .pizza-form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all elements horizontally */
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
 }
 
-/* Styling for pizza size input */
 .form-group {
   margin-bottom: 20px;
-  text-align: center; /* Center the label and select dropdown */
+  text-align: center;
 }
 
 #size {
-  font-size: 18px; /* Increase the font size for better readability */
+  font-size: 18px;
   padding: 10px;
-  width: 200px; /* Make the dropdown larger */
+  width: 200px;
 }
 
-/* Toppings container */
 .toppings-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the topping icons */
+  justify-content: center;
   gap: 10px;
   margin: 20px 0;
 }
 
-/* Styling for individual topping items */
 .topping {
   display: flex;
   flex-direction: column;
@@ -39,34 +33,32 @@
 }
 
 .topping img {
-  width: 200px; /* Increase the size of the topping icons */
+  width: 200px;
   height: 200px;
 }
 
 .topping img.selected {
-  border: 2px solid #C94A31; /* Add border to indicate selected toppings */
-
+  border: 2px solid #C94A31;
 }
 
-/* Center the form buttons */
 .form-actions {
   display: flex;
-  justify-content: center; /* Center the buttons */
-  gap: 20px; /* Add space between buttons */
+  justify-content: center;
+  gap: 20px;
   margin-top: 20px;
 }
 
 button {
-  background-color: #6B8E23; /* Basil Green */
+  background-color: #6B8E23;
   color: white;
   border: none;
-  padding: 15px 25px; /* Increase padding for larger buttons */
+  padding: 15px 25px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition */
-  font-size: 16px; /* Larger text */
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
 button:hover {
-  background-color: #C94A31; /* Tomato Red */
+  background-color: #C94A31;
 }

@@ -1,23 +1,18 @@
-/* OrderItem.css */
-
 li {
-    list-style-type: none; /* Remove bullet points */
-    margin-bottom: 10px; /* Space between orders */
+    list-style-type: none;
+    margin-bottom: 10px;
   }
   
   ul {
-    padding: 0; /* Remove padding */
+    padding: 0;
   }
   
   ul ul {
-    margin-left: 20px; /* Indent nested list */
-    padding: 0; /* Remove padding */
-    border: none; /* Remove borders from nested lists */
+    margin-left: 20px;
+    padding: 0;
+    border: none;
   }
   
   button {
-    margin-left: 10px; /* Add space between buttons */
+    margin-left: 10px;
   }
-  
-  /* Additional styling as needed */
-  

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import PizzaForm from '../../components/PizzaForm/PizzaForm';
+import PizzaForm from '../../../components/PizzaForm/PizzaForm';
 import './PizzaEditPage.css';
 
 function PizzaEditPage() {

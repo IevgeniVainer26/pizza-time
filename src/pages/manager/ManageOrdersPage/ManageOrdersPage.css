@@ -1,0 +1,12 @@
+.manage-orders-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #C94A31;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,23 @@
+.pizza-edit-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .toppings-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .topping-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .topping-item input {
+    margin-right: 10px;
+  }

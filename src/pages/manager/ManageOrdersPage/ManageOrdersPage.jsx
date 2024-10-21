@@ -1,38 +1,32 @@
-// src/pages/manager/ManageOrdersPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './ManageOrdersPage.css'; // Import your CSS file
+import './ManageOrdersPage.css';
 
 function ManageOrdersPage() {
   const [managerOrders, setManagerOrders] = useState([]);
   const navigate = useNavigate();
 
-  // Load manager orders from localStorage when the component mounts
   useEffect(() => {
     const loadManagerOrders = () => {
       const storedManagerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
       setManagerOrders(storedManagerOrders);
     };
 
-    // Load orders initially
     loadManagerOrders();
-
-    // Set up an event listener for storage events
     window.addEventListener('storage', loadManagerOrders);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('storage', loadManagerOrders);
     };
   }, []);
 
   const handleViewOrder = (index) => {
-    navigate(`/order-view/${index}`); // Navigate to OrderViewPage with order index
+    navigate(`/order-view/${index}`);
   };
 
   return (
     <div className="manage-orders-page">
-      <h2>Manager Orders</h2>
+      <h2>Manage Orders</h2>
       {managerOrders.length === 0 ? (
         <p>No orders to review.</p>
       ) : (

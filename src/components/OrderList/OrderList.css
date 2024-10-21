@@ -1,28 +1,24 @@
-/* src/components/OrderList.css */
-
 .order-list {
     margin: 20px 0;
     padding: 0;
-    list-style-type: none; /* Remove bullet points */
-    
+    list-style-type: none;
   }
   
   .order-item {
-    background-color: #fff; /* White background for items */
-    border: 2px solid #C94A31; /* Tomato Red border */
+    background-color: #fff;
+    border: 2px solid #C94A31;
     border-radius: 8px;
     padding: 15px;
-    margin: 10px 0; /* Space between items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    text-align: left; /* Align text to the left */
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
   }
   
   .order-item h3 {
-    color: #C94A31; /* Tomato Red */
+    color: #C94A31;
   }
   
   .order-item button {
-    background-color: #49680d; /* Basil Green */
+    background-color: #49680d;
     color: white;
   }
-  

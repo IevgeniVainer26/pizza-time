@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './PizzaForm.css';
 
 function PizzaForm({ onSave, initialPizza, toppings, onBack }) {
-  // Set default size to Medium if initialPizza is not provided
   const [pizzaSize, setPizzaSize] = useState(initialPizza?.size || 'Medium');
   const [selectedToppings, setSelectedToppings] = useState([]);
 
-  // Initialize selected toppings if editing an existing pizza
   useEffect(() => {
     if (initialPizza && initialPizza.toppings) {
       setSelectedToppings(initialPizza.toppings);

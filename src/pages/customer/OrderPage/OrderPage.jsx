@@ -1,4 +1,3 @@
-// src/pages/customer/OrderPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OrderPage.css';
@@ -61,7 +60,7 @@ function OrderPage() {
   };
 
   return (
-    <div className="order-page"> {/* Use order-page class for styling */}
+    <div className="order-page">
       <h2>Customer Orders</h2>
       <div className="input-container">
         <input
