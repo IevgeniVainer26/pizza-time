@@ -21,7 +21,7 @@ function ManageOrdersPage() {
   }, []);
 
   const handleViewOrder = (index) => {
-    navigate(`/order-view/${index}`);
+    navigate(`/view/${index}`);
   };
 
   return (

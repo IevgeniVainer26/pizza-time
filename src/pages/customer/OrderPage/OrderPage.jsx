@@ -37,12 +37,12 @@ function OrderPage() {
     }
 
     setIsNameLocked(true);
-    navigate('/edit-pizza', { state: { customerName } });
+    navigate('/edit', { state: { customerName } });
   };
 
   const handleEditOrder = (orderIndex, pizzaIndex) => {
     const order = orders[orderIndex];
-    navigate('/edit-pizza', { state: { customerName: order.customerName, pizzaIndex } });
+    navigate('/edit', { state: { customerName: order.customerName, pizzaIndex } });
   };
 
   const handleFinishOrder = () => {

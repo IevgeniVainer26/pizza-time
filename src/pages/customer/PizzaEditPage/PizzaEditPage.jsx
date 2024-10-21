@@ -43,7 +43,7 @@ function PizzaEditPage() {
       localStorage.setItem('orders', JSON.stringify(orders));
     }
 
-    navigate('/');
+    navigate('/order');
   };
 
   const handleBack = () => {
@@ -56,7 +56,7 @@ function PizzaEditPage() {
         localStorage.setItem('orders', JSON.stringify(orders));
       }
     }
-    navigate('/');
+    navigate('/order');
   };
 
   return (

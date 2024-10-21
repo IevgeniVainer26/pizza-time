@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import OrderPage from './pages/customer/OrderPage/OrderPage';
 import PizzaEditPage from './pages/customer/PizzaEditPage/PizzaEditPage';
 import ManageOrdersPage from './pages/manager/ManageOrdersPage/ManageOrdersPage';
@@ -13,10 +13,11 @@ function App() {
         <img src="/assets/pizzaicon.png" alt="Logo" className="App-logo" />
       </div>
       <Routes>
-        <Route path="/" element={<OrderPage />} />
-        <Route path="/edit-pizza" element={<PizzaEditPage />} />
-        <Route path="/manage-orders" element={<ManageOrdersPage />} />
-        <Route path="/order-view/:id" element={<OrderViewPage />} />
+        <Route path="/" element={<Navigate to="/order" />} />
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="/edit" element={<PizzaEditPage />} />
+        <Route path="/manage" element={<ManageOrdersPage />} />
+        <Route path="/view/:id" element={<OrderViewPage />} />
       </Routes>
     </Router>
   );

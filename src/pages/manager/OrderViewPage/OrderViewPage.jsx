@@ -17,7 +17,7 @@ function OrderViewPage() {
     const orders = JSON.parse(localStorage.getItem('managerOrders')) || [];
     const updatedOrders = orders.filter((_, index) => index !== parseInt(id));
     localStorage.setItem('managerOrders', JSON.stringify(updatedOrders));
-    navigate('/manage-orders');
+    navigate('/manage');
   };
 
   if (!order) {
@@ -36,7 +36,7 @@ function OrderViewPage() {
       </ul>
       <div className="button-container">
         <button onClick={handleAcceptOrder}>Accept Order</button>
-        <button onClick={() => navigate('/manage-orders')}>Back to Manage Orders</button>
+        <button onClick={() => navigate('/manage')}>Back to Manage Orders</button>
       </div>
     </div>
   );
