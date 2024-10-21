@@ -1,5 +1,7 @@
+// src/pages/manager/OrderViewPage.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './OrderViewPage.css';
 
 function OrderViewPage() {
   const { id } = useParams(); // Get the order index from the URL parameters
@@ -28,7 +30,6 @@ function OrderViewPage() {
   return (
     <div>
       <h2>Order Details for {order.customerName}</h2>
-      <h3>Pizzas:</h3>
       <ul>
         {order.pizzas.map((pizza, index) => (
           <li key={index}>
@@ -36,8 +37,10 @@ function OrderViewPage() {
           </li>
         ))}
       </ul>
-      <button onClick={handleAcceptOrder}>Accept Order</button>
-      <button onClick={() => navigate('/manage-orders')}>Back to Manage Orders</button>
+      <div className="button-container"> {/* Add this div for centering buttons */}
+        <button onClick={handleAcceptOrder}>Accept Order</button>
+        <button onClick={() => navigate('/manage-orders')}>Back to Manage Orders</button>
+      </div>
     </div>
   );
 }

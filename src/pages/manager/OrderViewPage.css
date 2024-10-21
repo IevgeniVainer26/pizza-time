@@ -1,0 +1,46 @@
+/* src/pages/manager/OrderViewPage.css */
+h2 {
+    text-align: center; /* Center the heading */
+}
+
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    text-align: center; /* Center align the pizza list */
+    font-size: 2em; /* Increase font size */
+}
+
+li {
+    margin: 10px auto; /* Space between list items and center */
+    padding: 10px; /* Space inside the border */
+    border: 2px solid #C94A31; /* Tomato Red border */
+    border-radius: 5px; /* Rounded corners */
+    transition: box-shadow 0.3s; /* Transition effect for hover */
+    max-width: 100%; /* Set max width for each item */
+    width: fit-content; /* Width adjusts to fit content */
+    display: inline-block; /* Allow items to flow inline */
+}
+
+li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the buttons horizontally */
+    margin: 20px 0; /* Space around the button container */
+}
+
+button {
+    margin: 0 10px; /* Space between buttons */
+    padding: 10px 15px; /* Button padding */
+    background-color: #6B8E23; /* Basil Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C94A31; /* Tomato Red */
+}

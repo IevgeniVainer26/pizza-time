@@ -1,69 +1,68 @@
 import React, { useState, useEffect } from 'react';
 import './PizzaForm.css';
 
-const PizzaForm = ({ onSave, initialPizza, onBack }) => { // Added onBack prop
-  const [size, setSize] = useState(initialPizza?.size || 'Medium');
-  const [toppings, setToppings] = useState(initialPizza?.toppings || []);
+function PizzaForm({ onSave, initialPizza, toppings, onBack }) {
+  // Set default size to Medium if initialPizza is not provided
+  const [pizzaSize, setPizzaSize] = useState(initialPizza?.size || 'Medium');
+  const [selectedToppings, setSelectedToppings] = useState([]);
 
+  // Initialize selected toppings if editing an existing pizza
   useEffect(() => {
-    if (initialPizza) {
-      setSize(initialPizza.size);
-      setToppings(initialPizza.toppings);
+    if (initialPizza && initialPizza.toppings) {
+      setSelectedToppings(initialPizza.toppings);
     }
   }, [initialPizza]);
 
+  const handleToppingClick = (topping) => {
+    if (selectedToppings.includes(topping)) {
+      setSelectedToppings(selectedToppings.filter(t => t !== topping));
+    } else {
+      setSelectedToppings([...selectedToppings, topping]);
+    }
+  };
+
   const handleSave = () => {
-    const newPizza = { size, toppings };
-    console.log('Saving pizza with details:', newPizza); // Log the new pizza details
-    onSave(newPizza); // Call the provided save function
+    onSave({ size: pizzaSize, toppings: selectedToppings });
   };
 
   return (
-    <div>
-      <label>
-        Pizza Size:
-        <select value={size} onChange={(e) => setSize(e.target.value)}>
+    <div className="pizza-form">
+      <div className="form-group">
+        <label htmlFor="size">Pizza Size:</label>
+        <select
+          id="size"
+          value={pizzaSize}
+          onChange={(e) => setPizzaSize(e.target.value)}
+        >
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
         </select>
-      </label>
-      <div>
-        <h3>Toppings:</h3>
-        <label>
-          <input
-            type="checkbox"
-            checked={toppings.includes('Cheese')}
-            onChange={(e) => {
-              if (e.target.checked) {
-                setToppings(prev => [...prev, 'Cheese']);
-              } else {
-                setToppings(prev => prev.filter(topping => topping !== 'Cheese'));
-              }
-            }}
-          />
-          Cheese
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={toppings.includes('Pepperoni')}
-            onChange={(e) => {
-              if (e.target.checked) {
-                setToppings(prev => [...prev, 'Pepperoni']);
-              } else {
-                setToppings(prev => prev.filter(topping => topping !== 'Pepperoni'));
-              }
-            }}
-          />
-          Pepperoni
-        </label>
-        {/* Add more toppings as needed */}
       </div>
-      <button onClick={handleSave}>Save Pizza</button>
-      <button onClick={onBack} style={{ marginLeft: '10px' }}>Back</button> {/* Use onBack prop for back navigation */}
+
+      <div className="toppings-container">
+        {toppings.map((topping) => (
+          <div
+            key={topping.id}
+            className={`topping ${selectedToppings.includes(topping.name) ? 'selected' : ''}`}
+            onClick={() => handleToppingClick(topping.name)}
+          >
+            <img
+              src={topping.image}
+              alt={topping.name}
+              className={selectedToppings.includes(topping.name) ? 'selected' : ''}
+            />
+            <span>{topping.name}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="form-actions">
+        <button onClick={handleSave}>Save</button>
+        <button onClick={onBack}>Back</button>
+      </div>
     </div>
   );
-};
+}
 
 export default PizzaForm;

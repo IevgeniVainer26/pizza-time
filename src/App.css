@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: #F5F5F5; /* Light background */
+  font-family: 'Arial', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header {
+  background-color: #F5F5F5; /* Same color as the page background */
+  border: none; /* Remove any borders */
+  padding: 10px; /* Optional: Add some padding */
+  width: 100%; /* Make the header full width */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.App-logo {
+  width: 80px; /* Increase width as desired */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and title */
+}
+
+
+.container { 
+  flex: 1; /* Allow the container to grow and fill available space */
+  display: flex; 
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+h2 {
+  color: #C94A31; /* Tomato Red */
+}
+
+button {
+  background-color: #6B8E23; /* Basil Green */
   color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #C94A31; /* Tomato Red */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    padding: 8px 12px; /* Adjust padding for smaller buttons */
   }
 }
