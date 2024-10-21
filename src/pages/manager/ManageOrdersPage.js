@@ -1,7 +1,6 @@
-// src/pages/manager/ManageOrdersPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './ManageOrdersPage.css';
+
 
 function ManageOrdersPage() {
   const [managerOrders, setManagerOrders] = useState([]);
@@ -26,7 +25,7 @@ function ManageOrdersPage() {
     };
   }, []);
 
-  const handleViewOrder = (index) => {
+  const handleOrderClick = (index) => {
     navigate(`/order-view/${index}`); // Navigate to OrderViewPage with order index
   };
 
@@ -38,9 +37,8 @@ function ManageOrdersPage() {
       ) : (
         <ul>
           {managerOrders.map((order, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => handleOrderClick(index)} style={{ cursor: 'pointer' }}>
               <strong>Order for {order.customerName}</strong>
-              <button onClick={() => handleViewOrder(index)}>View</button>
             </li>
           ))}
         </ul>

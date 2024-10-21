@@ -1,8 +1,6 @@
-// src/pages/customer/OrderPage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OrderList from '../../components/OrderList/OrderList';
-import './OrderPage.css';
 
 function OrderPage() {
   const [customerName, setCustomerName] = useState(''); // State for the customer name
@@ -80,25 +78,25 @@ function OrderPage() {
   
 
   return (
-    <div className="order-container">
-    <h2>Customer Orders</h2>
-    <div className="input-container"> {/* Wrapper for input and button */}
-      <input
-        type="text"
-        placeholder="Enter Customer Name"
-        value={customerName}
-        onChange={(e) => {
-          if (!isNameLocked) {
-            setCustomerName(e.target.value);
-          }
-        }} 
-        readOnly={isNameLocked}
-      />
-      <button onClick={handleAddOrder}>Add New Order</button>
+    <div>
+      <h2>Customer Orders</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Customer Name"
+          value={customerName}
+          onChange={(e) => {
+            if (!isNameLocked) {
+              setCustomerName(e.target.value);
+            }
+          }} 
+          readOnly={isNameLocked}
+        />
+        <button onClick={handleAddOrder}>Add New Order</button>
+      </div>
+      <OrderList orders={orders} onEditOrder={handleEditOrder} onFinishOrder={handleFinishOrder} />
     </div>
-    <OrderList orders={orders} onEditOrder={handleEditOrder} onFinishOrder={handleFinishOrder} />
-  </div>
-);
+  );
 }
 
 export default OrderPage;
